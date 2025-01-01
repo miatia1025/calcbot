@@ -1,0 +1,27 @@
+{
+  "name": "calc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "reload": "node deploy-commands.js",
+    "bot": "node index.js",
+    "dev": "concurrently \"npm:bot\" \"npm:reload\"",
+    "launch": "pm2 start ecosystem.config.js && pm2 logs",
+    "launch-ever": "pm2 start ecosystem.config.js && pm2 save && pm2 startup && pm2 logs",
+    "launch-log": "pm2 logs",
+    "kill": "pm2 delete all && pm2 save"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "eslint": "^9.17.0",
+    "pm2": "^5.4.3"
+  }
+}
